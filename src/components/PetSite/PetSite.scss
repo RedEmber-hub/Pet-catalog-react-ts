@@ -1,1 +1,170 @@
 // Стили для PetSite
+
+.pet-site {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+  .pets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .pet-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid #dee2e6;
+    width: 100%;
+    min-height: 400px;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border-color: #74b9ff;
+    }
+
+    .pet-photo {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:hover .pet-photo img {
+      transform: scale(1.05);
+    }
+
+    .pet-info {
+      padding: 20px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .pet-name {
+        color: #6c757d;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .pet-age {
+        color: #74b9ff;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+      }
+
+      .pet-description {
+        color: #495057;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+        flex-grow: 1;
+      }
+    }
+  }
+
+  // Планшет (768px - 1024px)
+  @media (max-width: 1024px) {
+    .pets-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      padding: 0 15px;
+    }
+
+    .pet-card {
+      min-height: 380px;
+
+      .pet-info {
+        padding: 18px;
+        height: 180px;
+      }
+    }
+  }
+
+  // Мобильный (до 768px)
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+
+    .pets-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 0 10px;
+      max-width: 400px;
+    }
+
+    .pet-card {
+      min-height: 350px;
+
+      .pet-photo {
+        height: 180px;
+      }
+
+      .pet-info {
+        padding: 15px;
+        height: 170px;
+
+        .pet-name {
+          font-size: 20px;
+        }
+
+        .pet-age {
+          font-size: 15px;
+        }
+
+        .pet-description {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  // Маленький мобильный (до 480px)
+  @media (max-width: 480px) {
+    padding: 20px 10px;
+
+    .pets-grid {
+      gap: 15px;
+      padding: 0 5px;
+    }
+
+    .pet-card {
+      min-height: 320px;
+
+      .pet-photo {
+        height: 160px;
+      }
+
+      .pet-info {
+        padding: 12px;
+        height: 160px;
+
+        .pet-name {
+          font-size: 18px;
+        }
+
+        .pet-age {
+          font-size: 14px;
+        }
+
+        .pet-description {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
